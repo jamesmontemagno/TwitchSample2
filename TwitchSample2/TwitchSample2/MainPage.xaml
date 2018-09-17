@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TwitchSample2"
+             x:Class="TwitchSample2.MainPage"
+             Title="Click App">
+
+    <ContentPage.BindingContext>
+        <local:CountViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" Command="{Binding IncreaseCountCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout VerticalOptions="Center"
+                 Padding="10">
+        <!-- Place new controls here -->
+        <Button Text="Click Me"
+                Command="{Binding IncreaseCountCommand}"/>
+
+        <Label Text="{Binding CountInfo}"
+               HorizontalOptions="FillAndExpand"
+               HorizontalTextAlignment="Center"/>
+    </StackLayout>
+
+</ContentPage>
